@@ -664,3 +664,30 @@ white-space: normal;
 .plan-btn--featured:hover {
   background-color: var(--plan-btn-hover);
 }
+
+/* 仕切り線 */
+.plan-divider {
+  margin: 80px auto;
+  width: 100%;
+  max-width: 200px;
+  height: 1px;
+  background-color: var(--plan-border, #e8e8e8);
+}
+
+/* TOPへ戻るリンク */
+.plan-back-wrapper {
+  text-align: center;
+  margin-top: 60px;
+}
+
+.plan-back-link {
+  color: var(--plan-text-sub, #666666);
+  text-decoration: none;
+  font-size: 14px;
+  letter-spacing: 0.05em;
+  transition: color 0.2s ease;
+}
+
+.plan-back-link:hover {
+  color: var(--plan-text-main, #111111);
+}
