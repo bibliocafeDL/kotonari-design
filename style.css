@@ -500,3 +500,167 @@ line-height: 1.5;
 white-space: normal;
 }
 }
+
+/* ===================================================
+   料金プランセクション用スタイル（KOTONARI デザイン）
+   =================================================== */
+
+:root {
+  --plan-bg: #fafafa;            /* セクション背景色（白系） */
+  --plan-card-bg: #ffffff;       /* カード背景色 */
+  --plan-text-main: #1a1a1a;     /* メイン文字色 */
+  --plan-text-sub: #666666;      /* 補足文字色 */
+  --plan-border: #e8e8e8;        /* 境界線カラー */
+  --plan-accent: #111111;        /* メインアクセントカラー（黒・ブランド色） */
+  --plan-btn-hover: #333333;     /* ボタンホバー時 */
+}
+
+/* 全体ラッパー */
+.plan-section {
+  padding: 100px 24px;
+  background-color: var(--plan-bg);
+  color: var(--plan-text-main);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", "Hiragino Sans", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+  box-sizing: border-box;
+}
+
+.plan-section * {
+  box-sizing: border-box;
+}
+
+.plan-container {
+  max-width: 1040px;
+  margin: 0 auto;
+}
+
+/* タイトルエリア */
+.plan-header {
+  text-align: center;
+  margin-bottom: 56px;
+}
+
+.plan-title {
+  font-size: 26px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  margin: 0 0 12px;
+}
+
+.plan-subtitle {
+  font-size: 13px;
+  color: var(--plan-text-sub);
+  letter-spacing: 0.04em;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* プランカードのグリッド */
+.plan-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 28px;
+  align-items: stretch;
+}
+
+/* 各カード */
+.plan-card {
+  background: var(--plan-card-bg);
+  border: 1px solid var(--plan-border);
+  border-radius: 16px;
+  padding: 40px 28px 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  position: relative;
+}
+
+.plan-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
+}
+
+/* おすすめカード（CARE）の強調 */
+.plan-card--featured {
+  border: 1.5px solid var(--plan-accent);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.04);
+}
+
+.plan-badge {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--plan-accent);
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  padding: 4px 14px;
+  border-radius: 30px;
+}
+
+/* プラン名 */
+.plan-name {
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-align: center;
+  margin: 0 0 16px;
+}
+
+/* 金額表示 */
+.plan-price {
+  font-size: 34px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.plan-price span {
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--plan-text-sub);
+  margin-left: 2px;
+}
+
+/* 説明文 */
+.plan-desc {
+  font-size: 13px;
+  line-height: 1.8;
+  color: var(--plan-text-sub);
+  margin: 0 0 36px;
+  flex-grow: 1;
+  text-align: left;
+}
+
+/* 申し込みボタン */
+.plan-btn {
+  display: block;
+  width: 100%;
+  text-align: center;
+  padding: 13px 0;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-decoration: none;
+  background-color: #f3f3f3;
+  color: var(--plan-text-main);
+  transition: all 0.2s ease;
+  border: 1px solid transparent;
+}
+
+.plan-btn:hover {
+  background-color: #e5e5e5;
+}
+
+.plan-btn--featured {
+  background-color: var(--plan-accent);
+  color: #ffffff;
+}
+
+.plan-btn--featured:hover {
+  background-color: var(--plan-btn-hover);
+}
