@@ -254,7 +254,11 @@
        必要な形を一緒に整理します。
       </p>
      </div>
-     <form class="contact-form" id="contactForm">
+     <form action="https://formsubmit.co/kotonari-design@gmail.com" class="contact-form" id="contactForm" method="POST">
+      <input name="_subject" type="hidden" value="【KOTONARI】Webサイトから制作相談が届きました"/>
+      <input name="_template" type="hidden" value="table"/>
+      <input name="_captcha" type="hidden" value="true"/>
+      <input name="_honey" style="display:none" type="text"/>
       <div class="form-grid">
        <label>
         <span>
@@ -358,7 +362,7 @@
        <textarea name="message" placeholder="こんなサイトにしたい、今困っていることなど、自由に書いてください。" required="" rows="6"></textarea>
       </label>
       <p class="form-note">
-       送信ボタンを押すと、入力内容をまとめたメールが開きます。宛先はKOTONARIです。
+       送信すると、入力内容がKOTONARIへ直接届きます。初回のみ送信先メールアドレスの認証が必要です。
       </p>
       <button class="button button-light form-submit" type="submit">
        KOTONARIへ相談内容を送る
@@ -369,34 +373,7 @@
      </p>
     </div>
    </section>
-   <script>
-    document.getElementById('contactForm').addEventListener('submit', function (e) {
-      e.preventDefault();
 
-      const f = new FormData(this);
-      const requests = f.getAll('request').join('、') || '未選択';
-      const subject = '【KOTONARI制作相談】' + (f.get('business') || f.get('name'));
-      const body = [
-        'KOTONARI Webサイト制作相談',
-        '',
-        '■お名前：' + f.get('name'),
-        '■メール：' + f.get('email'),
-        '■お店・事業名：' + (f.get('business') || '未記入'),
-        '■電話番号：' + (f.get('phone') || '未記入'),
-        '■相談内容：' + requests,
-        '■現在のWebサイト：' + (f.get('url') || 'なし・未記入'),
-        '■希望時期：' + f.get('timing'),
-        '',
-        '■お問い合わせ内容',
-        f.get('message')
-      ].join('\n');
-
-      location.href = 'mailto:kotonari-design@gmail.com?subject='
-        + encodeURIComponent(subject)
-        + '&body='
-        + encodeURIComponent(body);
-    });
-   </script>
   </main>
   <footer class="footer">
    <p class="footer-logo">
